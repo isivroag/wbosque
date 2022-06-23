@@ -10,6 +10,7 @@ $(document).ready(function () {
         data: null,
         defaultContent:
           "<div class='text-center'><button class='btn btn-sm btn-primary  btnEditar'><i class='fas fa-edit'></i></button>\
+          <button class='btn btn-sm bg-orange btnPdf' data-toggle='tooltip' data-placement='top' title='Imprimir'><i class='text-white fas fa-file-pdf'></i></button>\
             <button class='btn btn-sm btn-danger btnBorrar'><i class='fas fa-trash-alt'></i></button></div>",
       },
     ],
@@ -118,4 +119,18 @@ $(document).ready(function () {
       $('#modalCRUD').modal('hide')
     }
   })
+
+  $(document).on("click", ".btnPdf", function() {
+    fila = $(this).closest('tr')
+    folio = parseInt(fila.find('td:eq(0)').text())
+    var ancho = 1000;
+    var alto = 800;
+    var x = parseInt((window.screen.width / 2) - (ancho / 2));
+    var y = parseInt((window.screen.height / 2) - (alto / 2));
+
+    url = "formatos/pdfvale.php?folio=" + folio;
+
+    window.open(url, "Vale", "left=" + x + ",top=" + y + ",height=" + alto + ",width=" + ancho + "scrollbar=si,location=no,resizable=si,menubar=no");
+
+});
 })
