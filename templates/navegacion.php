@@ -89,12 +89,12 @@
           </li>
         <?php } ?>
 
-        <li class="nav-item has-treeview <?php echo ($pagina == 'cntacompras'  ) ? "menu-open" : ""; ?>">
+        <li class="nav-item has-treeview <?php echo ($pagina == 'cntacompras') ? "menu-open" : ""; ?>">
 
 
-          <a href="#" class="nav-link <?php echo ($pagina == 'cntacompras'  ) ? "active" : ""; ?>">
+          <a href="#" class="nav-link <?php echo ($pagina == 'cntacompras') ? "active" : ""; ?>">
 
-              <i class="fa-solid fa-file-lines nav-icon"></i>
+            <i class="fa-solid fa-file-lines nav-icon"></i>
             <p>
               Operaciones
 
@@ -111,14 +111,40 @@
                 <p>Ordenes de Compra</p>
               </a>
             </li>
-          
+
 
 
           </ul>
         </li>
 
 
+        <li class="nav-item has-treeview <?php echo ($pagina == 'cntacobranza') ? "menu-open" : ""; ?>">
 
+
+          <a href="#" class="nav-link <?php echo ($pagina == 'cntacobranza') ? "active" : ""; ?>">
+
+            <i class="fa-solid fa-magnifying-glass nav-icon"></i>
+            <p>
+              Consultas
+
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+
+
+            <li class="nav-item">
+              <a href="cntacobranza.php" class="nav-link <?php echo ($pagina == 'cntacobranza') ? "active seleccionado" : ""; ?>  ">
+
+                <i class="fa-solid fa-money-check-dollar   nav-icon"></i>
+                <p>Cobranza</p>
+              </a>
+            </li>
+
+
+
+          </ul>
+        </li>
 
 
         <?php if ($_SESSION['s_rol'] == '3') {
