@@ -37,8 +37,10 @@
 
         <?php if ($_SESSION['s_rol'] == '3' || $_SESSION['s_rol'] == '2' || $_SESSION['s_rol'] == '5') { ?>
 
-          <li class="nav-item  has-treeview <?php echo ($pagina == 'empresa' ||  $pagina == 'proyecto'  ||  $pagina == 'proveedor' ||  $pagina == 'concepto' ||  $pagina == 'inmueble') ? "menu-open" : ""; ?>">
-            <a href="#" class="nav-link  <?php echo ($pagina == 'empresa'  ||  $pagina == 'proyecto'  ||  $pagina == 'proveedor' ||  $pagina == 'concepto' ||  $pagina == 'inmueble') ? "active" : ""; ?>">
+          <li class="nav-item  has-treeview <?php echo ($pagina == 'empresa' ||  $pagina == 'proyecto'  ||  $pagina == 'proveedor' ||  $pagina == 'cliente' 
+          ||  $pagina == 'concepto' ||  $pagina == 'inmueble') ? "menu-open" : ""; ?>">
+            <a href="#" class="nav-link  <?php echo ($pagina == 'empresa'  ||  $pagina == 'proyecto'  ||  $pagina == 'proveedor' ||  $pagina == 'cliente' 
+            ||  $pagina == 'concepto' ||  $pagina == 'inmueble') ? "active" : ""; ?>">
               <i class="nav-icon fas fa-bars "></i>
               <p>
                 Catalogos
@@ -67,6 +69,13 @@
                 <a href="cntaproveedor.php" class="nav-link <?php echo ($pagina == 'proveedor') ? "active seleccionado" : ""; ?>  ">
                   <i class="fas fa-portrait nav-icon"></i>
                   <p>Proveedor</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="cntacliente.php" class="nav-link <?php echo ($pagina == 'cliente') ? "active seleccionado" : ""; ?>  ">
+                  <i class="fas fa-portrait nav-icon"></i>
+                  <p>Cliente</p>
                 </a>
               </li>
 
@@ -111,17 +120,30 @@
                 <p>Ordenes de Compra</p>
               </a>
             </li>
+            <li class="nav-item">
+              <a href="cntaordencompra.php" class="nav-link <?php echo ($pagina == 'cntacompras') ? "active seleccionado" : ""; ?>  ">
 
+                <i class="fa-solid fa-question text-green  nav-icon"></i>
+                <p>Cotizador</p>
+              </a>
+            </li>
 
+            <li class="nav-item">
+              <a href="cntaordencompra.php" class="nav-link <?php echo ($pagina == 'cntacompras') ? "active seleccionado" : ""; ?>  ">
+
+                <i class="fa-solid fa-question text-green  nav-icon"></i>
+                <p>Apartados</p>
+              </a>
+            </li>
 
           </ul>
         </li>
 
 
-        <li class="nav-item has-treeview <?php echo ($pagina == 'cntacobranza') ? "menu-open" : ""; ?>">
+        <li class="nav-item has-treeview <?php echo ($pagina == 'cntacobranza' || $pagina == 'cntaapartados') ? "menu-open" : ""; ?>">
 
 
-          <a href="#" class="nav-link <?php echo ($pagina == 'cntacobranza') ? "active" : ""; ?>">
+          <a href="#" class="nav-link <?php echo ($pagina == 'cntacobranza' || $pagina == 'cntaapartados') ? "active" : ""; ?>">
 
             <i class="fa-solid fa-magnifying-glass nav-icon"></i>
             <p>
@@ -132,6 +154,14 @@
           </a>
           <ul class="nav nav-treeview">
 
+          <li class="nav-item">
+              <a href="cntalotes.php" class="nav-link <?php echo ($pagina == 'cntalotes') ? "active seleccionado" : ""; ?>  ">
+
+                <i class="fa-solid fa-question   nav-icon"></i>
+                <p>Lotes Disponibles</p>
+              </a>
+            </li>
+
 
             <li class="nav-item">
               <a href="cntacobranza.php" class="nav-link <?php echo ($pagina == 'cntacobranza') ? "active seleccionado" : ""; ?>  ">
@@ -141,7 +171,13 @@
               </a>
             </li>
 
+            <li class="nav-item">
+              <a href="cntaapartados.php" class="nav-link <?php echo ($pagina == 'cntaapartados') ? "active seleccionado" : ""; ?>  ">
 
+                <i class="fa-solid fa-handshake-angle   nav-icon"></i>
+                <p>Apartados</p>
+              </a>
+            </li>
 
           </ul>
         </li>
